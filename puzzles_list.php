@@ -73,7 +73,7 @@ $GLOBALS['data'] = mysqli_query($db, $query);
     <h2 id="title">Puzzle List</h2><br>
     
     <div id="customerTableView">
-        <button><a class="btn btn-sm" href="createQuestion.php">Create a Puzzle</a></button>
+        <button><a class="btn btn-sm" href="createPuzzle.php">Create a Puzzle</a></button>
         <table class="display" id="ceremoniesTable" style="width:100%">
             <div class="table responsive">
                 <thead>
