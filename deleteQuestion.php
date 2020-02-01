@@ -1,11 +1,11 @@
 
 <?php $page_title = 'Gpuzzles > Delete Question'; ?>
 <?php 
-    require 'bin/functions.php';
+    //require 'bin/functions.php';
     require 'db_configuration.php';
     include('header.php'); 
-    $page="questions_list.php";
-    verifyLogin($page);
+    //$page="questions_list.php";
+    //verifyLogin($page);
 
 ?>
 <div class="container">
