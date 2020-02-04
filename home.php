@@ -65,8 +65,8 @@ include('header.php');
 
     $sql1 = "SELECT `value` FROM `preferences` WHERE `name`= 'NO_OF_TOPICS_PER_ROW'";
     $sql4 = "SELECT `value` FROM `preferences` WHERE `name`= 'NO_OF_QUESTIONS_TO_SHOW'";
-    $sql2 = "SELECT `name` FROM `gpuzzles`";
-    $sql3 = "SELECT `puzzle_image` FROM `gpuzzles`";
+    $sql2 = "SELECT `name` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer'  ORDER BY RAND() LIMIT 12";
+    $sql3 = "SELECT `puzzle_image` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer' ORDER BY RAND() LIMIT 12";
 
     $results1 = mysqli_query($db,$sql1);
     $results2 = mysqli_query($db,$sql2);
@@ -121,8 +121,8 @@ include('header.php');
         echo "
         <td>
             <a href = 'display_quiz.php?topic=$topic' title = $topic>
-                <image class = 'image' src = Images/puzzle_images/$pic></image>
-                <div id = 'title'>$topic</div>
+                <image class = 'image' src= 'Images/puzzle_images/$pic'  alt= $pic></image>
+                
             </a>
         </td>";
         $a++;
