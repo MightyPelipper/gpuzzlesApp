@@ -65,6 +65,16 @@ include('header.php');
 
     $sql1 = "SELECT `value` FROM `preferences` WHERE `name`= 'NO_OF_TOPICS_PER_ROW'";
     $sql4 = "SELECT `value` FROM `preferences` WHERE `name`= 'NO_OF_QUESTIONS_TO_SHOW'";
+    //this is to get the numbers of questions from preferences so i can limit the number of questions printed
+    //$sqlpref = "SELECT `value` FROM `preferences` WHERE `name`= 'NO_OF_QUESTIONS_TO_SHOW'";
+    //$resultspref = mysqli_query($db,$sqlpref);
+    //if(mysqli_num_rows($resultspref)>0){
+    //    while($row = mysqli_fetch_assoc($resultspref)){
+    //         $pref[] = $row;
+   //     }
+    //}
+
+    //select puzzles using the preferences restrictions
     $sql2 = "SELECT `name` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer'  ORDER BY RAND() LIMIT 12";
     $sql3 = "SELECT `puzzle_image` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer' ORDER BY RAND() LIMIT 12";
 
