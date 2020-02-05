@@ -3,6 +3,21 @@
 require 'db_configuration.php';
 include('header.php'); 
 
+//get the number of question shown on page from preferences
+$sqlnum = "SELECT `value` FROM preferences WHERE `name`= 'NO_OF_QUESTIONS_TO_SHOW'";
+
+$thing = mysqli_query($db,$sqlnum);
+
+$resultnum = mysqli_fetch_array($thing);
+
+
+//echo "<br>";
+
+
+$questNum = $resultnum['value'];
+//echo $questNum;
+// end of that
+
 ?>
 
 <html>
@@ -58,8 +73,9 @@ include('header.php');
             }
         }
     ?>
-    <h1 id = "title2">Welcome to QuizMaster</h1>
-    <h2 id = "directions">Select a topic to test your knowledge about India</h2><br>
+    <h1 id = "title2">Welcome to Gpuzzles</h1>
+    <br>
+    <h2 id = "directions">Latest Puzzles</h2><br>
     
     <?php
 
@@ -75,8 +91,8 @@ include('header.php');
     //}
 
     //select puzzles using the preferences restrictions
-    $sql2 = "SELECT `name` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer'  ORDER BY RAND() LIMIT 12";
-    $sql3 = "SELECT `puzzle_image` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer' ORDER BY RAND() LIMIT 12";
+    $sql2 = "SELECT `name` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer'  ORDER BY RAND() LIMIT $questNum";
+    $sql3 = "SELECT `puzzle_image` FROM `gpuzzles` WHERE `creator_name` = 'Vowel Changer' ORDER BY RAND() LIMIT $questNum";
 
     $results1 = mysqli_query($db,$sql1);
     $results2 = mysqli_query($db,$sql2);
